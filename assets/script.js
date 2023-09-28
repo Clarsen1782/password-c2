@@ -1,9 +1,13 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
+
 //prompt Length of password 8 to 128 characters
 const user = prompt ('Pick a Password length between 8 and 128:')
-
+if (user < 8 || user > 128) {
+  alert("Invalid. Please choose a number between 8 and 128.")
+} //add loop back to the origin queston
 const number = parseInt(user);
+
 //prompt Character types check lower/uppercase numeric, special
 const upperCase = confirm('Include uppercase letters?');
 const lowerCase = confirm('Include lowercase letters?');
@@ -14,8 +18,7 @@ const special = confirm('Include special characters?');
 const allChars = upperCase + lowerCase + numeric + special;
 if (!upperCase, !lowerCase, !numeric, !special) {
   alert("You must have at least one Character Type!")
-}
-
+} //add loop back to the origin queston
 
 // Write password to the #password input
 function writePassword() {
