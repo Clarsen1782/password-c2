@@ -19,13 +19,11 @@ function generatePassword () {
     alert("Please choose at least one character typeof.");
     return;
   }
+  
   //validate input
-  const charset = (
-    (uppercase ? 'ABCDEFGHIJKLMNOPQRSTUVWXYZ' : '') +
-    (lowercase ? 'abcdefghijklmnopqrstuvwxyz' : '') +
-    (numbers ? '0123456789' : '') +    
-    (special ? '!@#$%^&*()_-+=<>?' : '')
-  );
+  function password(password) {
+    return password.length >= 8 && /[a-z]/.test(password) && /[A-Z]/.test(password) && /\d/.test(password);
+  }
 
   let password = '';
   for (let i = 0; i < length; i++) {
