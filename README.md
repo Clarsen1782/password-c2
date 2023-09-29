@@ -1,5 +1,7 @@
 # password-c2
 
+Page Link: https://clarsen1782.github.io/password-c2/  
+
 ## Installation
 
 I created this web application to generate secure passwords using the uppercase and lowercase alphabet, numbers, and special characters. The user gets to pick how long they want the password length by using a range of a minimum of 8 characters up to a maximum of 128 characters. 
