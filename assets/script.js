@@ -1,24 +1,27 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 
-//prompt Length of password 8 to 128 characters
-const user = prompt ('Pick a Password length between 8 and 128:')
-if (user < 8 || user > 128) {
-  alert("Invalid. Please choose a number between 8 and 128.")
-} //add loop back to the origin queston
-const number = parseInt(user);
+function generatePassword () {
+  //prompt length between 8 and 128
+  const user = prompt("Please pick a password length between 8 and 128?");
+  const number = parseInt(user);
+  if (isNaN(number) || number > 8 || number < 128) {
+    break;
+  } else {a
+      alert("Please choose a number between 8 and 128.");
+  }
+  return number;
 
-//prompt Character types check lower/uppercase numeric, special
-const upperCase = confirm('Include uppercase letters?');
-const lowerCase = confirm('Include lowercase letters?');
-const numeric = confirm('Include numbers?');
-const special = confirm('Include special characters?');
+  //prompt uppercase, lowercase, numbers, special
 
-//check at least 1 character type is slected
-const allChars = upperCase + lowerCase + numeric + special;
-if (!upperCase, !lowerCase, !numeric, !special) {
-  alert("You must have at least one Character Type!")
-} //add loop back to the origin queston
+  //validate input
+
+  //generate password per criteria
+
+  //display password
+}
+
+ 
 
 // Write password to the #password input
 function writePassword() {
@@ -28,8 +31,6 @@ function writePassword() {
   passwordText.value = password;
 
 }
-//alert to display password
 
-// Add event listener to generate button
+// Add event listener to generate button/ show password in alert
 generateBtn.addEventListener("click", writePassword);
-
