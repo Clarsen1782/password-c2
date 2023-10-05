@@ -1,11 +1,15 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
+var lowerCaseChars = "abcdefghijklmnopqrstuvwxyz".split("")
+var upperCaseChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("")
+var numberChars = "0123456789".split("")
+var specialChars = "$%#&".split("")
 
 function generatePassword () {
   //prompt length between 8 and 128
-  const user = parseTnt(prompt("Please pick a password length between 8 and 128?"));
+  const passLength = parseInt(prompt("Please pick a password length between 8 and 128?"));
   
-  if (isNaN(user) || number < 8 || number > 128) {
+  if (isNaN(passLength) || passLength < 8 || passLength > 128) {
       alert("Please choose a number between 8 and 128.");
       return;
   }
@@ -14,27 +18,30 @@ function generatePassword () {
   const lowercase = confirm('Include lowercase letters?');
   const numbers = confirm('Include numbers?');
   const special = confirm('Include special characters?');
+  var chrChoises = [] 
 
-  if (!uppercase || !lowercase || !number || !special) {
+  if (!uppercase || !lowercase || !numbers || !special) {
     alert("Please choose at least one character typeof.");
-    return;
+    return "";
   }
-  
-  //validate input
-  function password(password) {
-    return password.length >= 8 && /[a-z]/.test(password) && /[A-Z]/.test(password) && /\d/.test(password);
-  }
-
-  let password = '';
-  for (let i = 0; i < length; i++) {
-    const randomIndex = Math.floor(Math.random() * charset.length);
-    password += charset.charAt(randomIndex);
-  }
+if (uppercase) {
+  chrChoises = chrChoises.concat(upperCaseChars);
 }
-
- 
-
-// Write password to the #password input
+if (lowercase) {
+  chrChoises = chrChoises.concat(lowerCaseChars);
+}
+if (numbers) {
+  chrChoises = chrChoises.concat(numberChars);
+}
+if (special) {
+  chrChoises = chrChoises.concat(specialChars);
+}
+for (var i = 0; i < passLength; i++) {
+  const password = Math.floor(Math.random() * chrChoises);
+}
+}
+  
+ // Write password to the #password input
 function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
@@ -43,5 +50,5 @@ function writePassword() {
 
 }
 
-// Add event listener to generate button/ show password in alert
+// Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
