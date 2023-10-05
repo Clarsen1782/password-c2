@@ -36,8 +36,10 @@ if (numbers) {
 if (special) {
   chrChoises = chrChoises.concat(specialChars);
 }
+let generatePassword = '';
+
 for (var i = 0; i < passLength; i++) {
-  const password = Math.floor(Math.random() * chrChoises);
+      Math.floor(Math.random() * chrChoises.passLength);
 }
 }
   
